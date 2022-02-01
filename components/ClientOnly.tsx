@@ -2,7 +2,11 @@
 
 import { useEffect, useState } from "react";
 
-export default function ClientOnly({ children, ...delegated }) {
+type ClientOnlyProps = { children: JSX.Element };
+export default function ClientOnly({
+  children,
+  ...delegated
+}: ClientOnlyProps) {
   const [hasMounted, setHasMounted] = useState(false);
 
   useEffect(() => {
