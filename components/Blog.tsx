@@ -10,6 +10,13 @@ const QUERY = gql`
           title
           author
           tag
+          image {
+            data {
+              attributes {
+                url
+              }
+            }
+          }
         }
       }
     }
@@ -64,12 +71,13 @@ export default function Blog() {
 
   const posts = data?.blogs?.data ?? [];
   return (
-    <div>
+    <div className="flex flex-row grid grid-cols-3">
       {posts.map((post: any) => (
         <Cards
           title={post.attributes.title}
           author={post.attributes.author}
           tag={post.attributes.tag}
+          imageUrl={post.attributes.image.data.attributes.url}
         />
       ))}
     </div>
