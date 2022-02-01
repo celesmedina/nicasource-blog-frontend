@@ -1,7 +1,7 @@
 // components/Countries.js
 
 import { useQuery, gql } from "@apollo/client";
-
+import Cards from "../components/Cards";
 const QUERY = gql`
   query Blogs {
     blogs {
@@ -16,6 +16,16 @@ const QUERY = gql`
   }
 `;
 
+type Post = {
+  title: string;
+  author: string;
+  tag: string;
+};
+type BlogData = {
+  blogs: {
+    data: Post;
+  };
+};
 export default function Blog() {
   const { data, loading, error } = useQuery(QUERY);
 
@@ -56,11 +66,11 @@ export default function Blog() {
   return (
     <div>
       {posts.map((post: any) => (
-        <div>
-          <p> {post.attributes.title}</p>
-          <p> {post.attributes.author}</p>
-          <p> {post.attributes.tag}</p>
-        </div>
+        <Cards
+          title={post.attributes.title}
+          author={post.attributes.author}
+          tag={post.attributes.tag}
+        />
       ))}
     </div>
   );
