@@ -1,10 +1,19 @@
 // components/Countries.js
 
 import { useQuery, gql } from "@apollo/client";
+import { useState } from "react";
 import Cards from "../components/Cards";
 const QUERY = gql`
-  query Blogs {
-    blogs {
+  query Blogs($pageSize: Int, $page: Int) {
+    blogs(pagination: { pageSize: $pageSize, page: $page }) {
+      meta {
+        pagination {
+          page
+          pageSize
+          total
+          pageCount
+        }
+      }
       data {
         attributes {
           title
@@ -33,8 +42,30 @@ type BlogData = {
     data: Post;
   };
 };
+
 export default function Blog() {
-  const { data, loading, error } = useQuery(QUERY);
+  let [page, setPage] = useState(1);
+  let [pageSize, setPageSize] = useState(9);
+
+  function handleOnClick(e: any) {
+    setPage(Number(e.target.value));
+  }
+
+  function handleOnClickPrevious(e: any) {
+    if (page - 1 > 0) {
+      setPage(page - 1);
+    }
+  }
+  function handleOnClickNext(e: any) {
+    setPage(page + 1);
+  }
+
+  const { data, loading, error, fetchMore } = useQuery(QUERY, {
+    variables: {
+      pageSize: pageSize,
+      page: page,
+    },
+  });
 
   if (loading) {
     return (
@@ -80,6 +111,37 @@ export default function Blog() {
           imageUrl={post.attributes.image.data.attributes.url}
         />
       ))}
+
+      <nav>
+        <ul className="inline-flex">
+          <li>
+            <button
+              className="h-10 px-5  transition-colors duration-150 bg-white rounded-r-lg focus:shadow-outline hover:bg-indigo-100"
+              onClick={handleOnClickPrevious}
+            >
+              Previous
+            </button>
+            {Array.from(Array(data.blogs.meta.pagination.pageCount).keys()).map(
+              (number) => (
+                <button
+                  className="h-10 px-5  transition-colors duration-150 bg-white rounded-r-lg focus:shadow-outline hover:bg-indigo-100"
+                  onClick={handleOnClick}
+                  value={number + 1}
+                >
+                  {number + 1}
+                </button>
+              )
+            )}
+
+            <button
+              className="h-10 px-5  transition-colors duration-150 bg-white rounded-r-lg focus:shadow-outline hover:bg-indigo-100"
+              onClick={handleOnClickNext}
+            >
+              Next
+            </button>
+          </li>
+        </ul>
+      </nav>
     </div>
   );
 }
