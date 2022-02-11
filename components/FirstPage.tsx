@@ -71,9 +71,9 @@ export default function FirstPage() {
 
   return (
     <>
-      <div className="grid grid-cols-4 grid-rows-2 gap-4">
-        <div className="relative overflow-hidden rounded-lg shadow-lg cursor-pointer col-span-2">
-          <div className="absolute px-6 py-4">
+      <div className="grid grid-cols-4 grid-rows-2 gap-4 pt-20 pr-36 pl-36">
+        <div className="relative col-span-2">
+          <div className="absolute text-white font-['Domine'] pl-5 pt-24 text-2xl">
             <p>{posts[0].attributes.title}</p>
           </div>
           <img
@@ -85,11 +85,11 @@ export default function FirstPage() {
           />
         </div>
         <div className="relative row-span-2">
-          <div className="absolute px-6 py-4">
+          <div className="absolute text-white font-['Domine'] pl-5 pt-64 text-2xl">
             <p>{posts[1].attributes.title}</p>
           </div>
           <img
-            className="object-cover"
+            className="object-cover h-full"
             src={
               "http://localhost:1337" +
               posts[1].attributes.image.data.attributes.url
@@ -97,11 +97,11 @@ export default function FirstPage() {
           />
         </div>
         <div className="relative r  row-span-2">
-          <div className="absolute px-6 py-4">
+          <div className="absolute text-white font-['Domine'] pl-5 pt-64 text-2xl">
             <p>{posts[2].attributes.title}</p>
           </div>
           <img
-            className="object-cover"
+            className="object-cover h-full"
             src={
               "http://localhost:1337" +
               posts[2].attributes.image.data.attributes.url
@@ -110,11 +110,11 @@ export default function FirstPage() {
         </div>
 
         <div className="relative  row-span-2">
-          <div className="absolute px-6 py-4">
+          <div className="absolute text-white font-['Domine'] pl-5 pt-64 text-2xl">
             <p>{posts[3].attributes.title}</p>
           </div>
           <img
-            className="object-fill"
+            className="object-cover h-full"
             src={
               "http://localhost:1337" +
               posts[3].attributes.image.data.attributes.url
@@ -122,11 +122,11 @@ export default function FirstPage() {
           />
         </div>
         <div className="relative row-span-2">
-          <div className="absolute px-6 py-4">
+          <div className="absolute text-white font-['Domine'] pl-5 pt-64 text-2xl">
             <p>{posts[4].attributes.title}</p>
           </div>
           <img
-            className="object-fill"
+            className="object-cover  h-full "
             src={
               "http://localhost:1337" +
               posts[4].attributes.image.data.attributes.url
@@ -134,7 +134,7 @@ export default function FirstPage() {
           />
         </div>
         <div className="relative col-span-2">
-          <div className="absolute px-6 py-4">
+          <div className="absolute text-white font-['Domine'] pl-5 pt-24 text-2xl">
             <p>{posts[5].attributes.title}</p>
           </div>
           <img
