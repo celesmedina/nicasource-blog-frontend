@@ -3,6 +3,8 @@
 import { useQuery, gql } from "@apollo/client";
 import { useState } from "react";
 import Cards from "../components/Cards";
+import FirstPage from "../components/FirstPage";
+import { useMediaQuery } from "react-responsive";
 const QUERY = gql`
   query Blogs($pageSize: Int, $page: Int) {
     blogs(pagination: { pageSize: $pageSize, page: $page }) {
@@ -45,12 +47,13 @@ type BlogData = {
 
 export default function Blog() {
   let [page, setPage] = useState(1);
-  let [pageSize, setPageSize] = useState(9);
 
+  const isDesktopOrLaptop = useMediaQuery({ query: "(min-width: 1224px)" });
   function handleOnClick(e: any) {
     setPage(Number(e.target.value));
   }
 
+  const pageSize = isDesktopOrLaptop ? 9 : 5;
   function handleOnClickPrevious(e: any) {
     if (page - 1 > 0) {
       setPage(page - 1);
@@ -102,46 +105,54 @@ export default function Blog() {
 
   const posts = data?.blogs?.data ?? [];
   return (
-    <div className="flex flex-row grid grid-cols-3">
-      {posts.map((post: any) => (
-        <Cards
-          title={post.attributes.title}
-          author={post.attributes.author}
-          tag={post.attributes.tag}
-          imageUrl={post.attributes.image.data.attributes.url}
-        />
-      ))}
+    <div>
+      <div>
+        {page === 1 && <FirstPage />}
 
-      <nav>
-        <ul className="inline-flex">
-          <li>
-            <button
-              className="h-10 px-5  transition-colors duration-150 bg-white rounded-r-lg focus:shadow-outline hover:bg-indigo-100"
-              onClick={handleOnClickPrevious}
-            >
-              Previous
-            </button>
-            {Array.from(Array(data.blogs.meta.pagination.pageCount).keys()).map(
-              (number) => (
+        {page > 1 &&
+          posts.map((post: any) => (
+            <Cards
+              title={post.attributes.title}
+              author={post.attributes.author}
+              tag={post.attributes.tag}
+              imageUrl={post.attributes.image.data.attributes.url}
+            />
+          ))}
+
+        {/* Pagination */}
+        <div className="text-center	">
+          <nav>
+            <ul className="inline-flex	">
+              <li>
                 <button
                   className="h-10 px-5  transition-colors duration-150 bg-white rounded-r-lg focus:shadow-outline hover:bg-indigo-100"
-                  onClick={handleOnClick}
-                  value={number + 1}
+                  onClick={handleOnClickPrevious}
                 >
-                  {number + 1}
+                  Previous
                 </button>
-              )
-            )}
+                {Array.from(
+                  Array(data.blogs.meta.pagination.pageCount).keys()
+                ).map((number) => (
+                  <button
+                    className="h-10 px-5  transition-colors duration-150 bg-white rounded-r-lg focus:shadow-outline hover:bg-indigo-100"
+                    onClick={handleOnClick}
+                    value={number + 1}
+                  >
+                    {number + 1}
+                  </button>
+                ))}
 
-            <button
-              className="h-10 px-5  transition-colors duration-150 bg-white rounded-r-lg focus:shadow-outline hover:bg-indigo-100"
-              onClick={handleOnClickNext}
-            >
-              Next
-            </button>
-          </li>
-        </ul>
-      </nav>
+                <button
+                  className="h-10 px-5  transition-colors duration-150 bg-white rounded-r-lg focus:shadow-outline hover:bg-indigo-100"
+                  onClick={handleOnClickNext}
+                >
+                  Next
+                </button>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
     </div>
   );
 }
