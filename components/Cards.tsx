@@ -1,7 +1,7 @@
 import Image from "next/image";
 export default function Cards(props: any) {
   return (
-    <div className="  relative pt-11 pl-16">
+    <div className=" relative pt-11 pl-16">
       <div className="h-48 relative ">
         <Image
           className="rounded-t-lg"
