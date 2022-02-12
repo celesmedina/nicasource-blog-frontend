@@ -120,7 +120,7 @@ export default function Blog() {
           ))}
 
         {/* Pagination */}
-        <div className="text-center	">
+        <div className="text-center pt-20	">
           <nav>
             <ul className="inline-flex	">
               <li>
