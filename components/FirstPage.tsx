@@ -1,6 +1,8 @@
 import { useQuery, gql } from "@apollo/client";
 import Cards from "../components/Cards";
 import Image from "next/image";
+import { faHeart } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const QUERY = gql`
   query Blogs {
@@ -18,6 +20,8 @@ const QUERY = gql`
           title
           author
           tag
+          views
+          likes
           excerpt
           image {
             data {
@@ -178,18 +182,9 @@ export default function FirstPage() {
         </div>
       </div>{" "}
       <div className="flex justify-center items-center pt-36 pl-44 pr-44 pb-36">
-        <div>
-          {/* <div className="h-48 relative ">
-        <Image
-          className="rounded-t-lg"
-          layout="fill"
-          objectFit="cover"
-          src={"http://localhost:1337" + props.imageUrl}
-          unoptimized
-        />
-      </div> */}
+        <div className="relative">
           <Image
-            className="pr-20"
+            className="pr-20 "
             width={450}
             height={350}
             src={
@@ -197,6 +192,24 @@ export default function FirstPage() {
               posts[6].attributes.image.data.attributes.url
             }
           />
+
+          <div>
+            <FontAwesomeIcon
+              icon={faHeart}
+              className="absolute bottom-5 pl-3 text-white	"
+            />
+
+            <p className="absolute bottom-2	rounded-md pl-9 pb-2 text-white">
+              {posts[6].attributes.likes}
+            </p>
+            <FontAwesomeIcon
+              icon={faHeart}
+              className="absolute bottom-5 pl-20 text-white	"
+            />
+            <p className="absolute bottom-2	rounded-md pl-24 pb-2 text-white">
+              {posts[6].attributes.views}
+            </p>
+          </div>
         </div>
         <div className="pl-5">
           <p className="font-['Domine'] text-5xl ">
@@ -219,9 +232,9 @@ export default function FirstPage() {
         />
       ))} */}
       <div className="flex">
-        <div className="relative flex-row pl-36">
+        <div className=" flex-row pl-36">
           <Image
-            className="rounded-t-lg"
+            className="rounded-t-lg relative"
             width={450}
             height={250}
             src={
@@ -229,10 +242,21 @@ export default function FirstPage() {
               posts[7].attributes.image.data.attributes.url
             }
           />
+
           <p className="font-['Poppins'] mt-1"> {posts[7].attributes.author}</p>
           <p className="font-['Domine'] pt-7 text-2xl">
             {posts[7].attributes.title}
           </p>
+          <div className="flex pt-8">
+            <FontAwesomeIcon icon={faHeart} className="pt-1" />
+            <p className="rounded-md pb-2 text-balck pl-3">
+              {posts[7].attributes.likes}
+            </p>
+            <FontAwesomeIcon icon={faHeart} className="pt-1 pl-10" />
+            <p className="rounded-md text-black pl-3">
+              {posts[7].attributes.views}
+            </p>
+          </div>
         </div>
         <div className="relative flex-row pl-10 pr-10">
           <Image
@@ -248,6 +272,16 @@ export default function FirstPage() {
           <p className="font-['Domine'] pt-7 text-2xl">
             {posts[8].attributes.title}
           </p>
+          <div className="flex pt-8">
+            <FontAwesomeIcon icon={faHeart} className="pt-1" />
+            <p className="rounded-md pb-2 text-balck pl-3">
+              {posts[8].attributes.likes}
+            </p>
+            <FontAwesomeIcon icon={faHeart} className="pt-1 pl-10" />
+            <p className="rounded-md text-black pl-3">
+              {posts[8].attributes.views}
+            </p>
+          </div>
         </div>
         <div className="relative flex-row pr-36">
           <Image
@@ -263,6 +297,17 @@ export default function FirstPage() {
           <p className="font-['Domine'] pt-7 text-2xl">
             {posts[9].attributes.title}
           </p>
+
+          <div className="flex pt-8">
+            <FontAwesomeIcon icon={faHeart} className="pt-1" />
+            <p className="rounded-md pb-2 text-balck pl-3">
+              {posts[9].attributes.likes}
+            </p>
+            <FontAwesomeIcon icon={faHeart} className="pt-1 pl-10" />
+            <p className="rounded-md text-black pl-3">
+              {posts[9].attributes.views}
+            </p>
+          </div>
         </div>
       </div>
     </>

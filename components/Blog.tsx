@@ -109,15 +109,18 @@ export default function Blog() {
       <div>
         {page === 1 && <FirstPage />}
 
-        {page > 1 &&
-          posts.map((post: any) => (
-            <Cards
-              title={post.attributes.title}
-              author={post.attributes.author}
-              tag={post.attributes.tag}
-              imageUrl={post.attributes.image.data.attributes.url}
-            />
-          ))}
+        <div className="grid grid-cols-3 grid-rows-3 pr-36 pl-36 ">
+          {" "}
+          {page > 1 &&
+            posts.map((post: any) => (
+              <Cards
+                title={post.attributes.title}
+                author={post.attributes.author}
+                tag={post.attributes.tag}
+                imageUrl={post.attributes.image.data.attributes.url}
+              />
+            ))}
+        </div>
 
         {/* Pagination */}
         <div className="text-center pt-20	">
