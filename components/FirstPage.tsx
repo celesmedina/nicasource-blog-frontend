@@ -22,6 +22,22 @@ const QUERY = gql`
           tag
           views
           likes
+          date
+          owner {
+            data {
+              attributes {
+                name
+                jobTitle
+                picture {
+                  data {
+                    attributes {
+                      url
+                    }
+                  }
+                }
+              }
+            }
+          }
           excerpt
           image {
             data {
@@ -92,6 +108,9 @@ export default function FirstPage() {
               posts[0].attributes.image.data.attributes.url
             }
           />
+          <div className=" absolute  font-['Poppins'] bottom-3 pl-5 text-sm">
+            <p className="rounded-md text-white">{posts[0].attributes.date}</p>
+          </div>
         </div>
         <div className="relative row-span-2">
           <div className="absolute text-white font-['Domine'] pl-5 pt-64 text-2xl">
@@ -100,7 +119,7 @@ export default function FirstPage() {
           <div className=" absolute  font-['Poppins'] pl-5 pt-5 text-xs">
             <p className="rounded-md p-1 text-black bg-white">
               {" "}
-              {posts[0].attributes.tag}
+              {posts[1].attributes.tag}
             </p>
           </div>
           <img
@@ -110,11 +129,14 @@ export default function FirstPage() {
               posts[1].attributes.image.data.attributes.url
             }
           />
+          <div className=" absolute  font-['Poppins'] bottom-3 pl-5 text-sm">
+            <p className="rounded-md text-white">{posts[1].attributes.date}</p>
+          </div>
         </div>
         <div className="relative r  row-span-2">
           <div className=" absolute  font-['Poppins'] pl-5 pt-5 text-xs">
             <p className="rounded-md p-1 text-black bg-white">
-              {posts[0].attributes.tag}
+              {posts[2].attributes.tag}
             </p>
           </div>
           <div className="absolute text-white font-['Domine'] pl-5 pt-64 text-2xl">
@@ -127,12 +149,15 @@ export default function FirstPage() {
               posts[2].attributes.image.data.attributes.url
             }
           />
+          <div className=" absolute  font-['Poppins'] bottom-3 pl-5 text-sm">
+            <p className="rounded-md text-white">{posts[2].attributes.date}</p>
+          </div>
         </div>
 
         <div className="relative  row-span-2">
           <div className=" absolute font-['Poppins'] pl-5 pt-5 text-xs">
             <p className="rounded-md p-1 text-black bg-white">
-              {posts[0].attributes.tag}
+              {posts[3].attributes.tag}
             </p>
           </div>
           <div className="absolute text-white font-['Domine'] pl-5 pt-64 text-2xl">
@@ -145,11 +170,14 @@ export default function FirstPage() {
               posts[3].attributes.image.data.attributes.url
             }
           />
+          <div className=" absolute  font-['Poppins'] bottom-3 pl-5 text-sm">
+            <p className="rounded-md text-white">{posts[3].attributes.date}</p>
+          </div>
         </div>
         <div className="relative row-span-2">
           <div className=" absolute  font-['Poppins'] pl-5 pt-5 text-xs">
             <p className="rounded-md p-1 text-black bg-white">
-              {posts[0].attributes.tag}
+              {posts[4].attributes.tag}
             </p>
           </div>
           <div className="absolute text-white font-['Domine'] pl-5 pt-64 text-2xl">
@@ -162,11 +190,14 @@ export default function FirstPage() {
               posts[4].attributes.image.data.attributes.url
             }
           />
+          <div className=" absolute  font-['Poppins'] bottom-3 pl-5 text-sm">
+            <p className="rounded-md text-white">{posts[4].attributes.date}</p>
+          </div>
         </div>
         <div className="relative col-span-2 ">
           <div className=" absolute  font-['Poppins'] pl-5 pt-5 text-xs">
             <p className="rounded-md p-1 text-black bg-white">
-              {posts[0].attributes.tag}
+              {posts[5].attributes.tag}
             </p>
           </div>
           <div className="absolute text-white font-['Domine'] pl-5 pt-24 text-2xl">
@@ -179,6 +210,9 @@ export default function FirstPage() {
               posts[5].attributes.image.data.attributes.url
             }
           />
+          <div className=" absolute  font-['Poppins'] bottom-3 pl-5 text-sm">
+            <p className="rounded-md text-white">{posts[5].attributes.date}</p>
+          </div>
         </div>
       </div>{" "}
       <div className="flex justify-center items-center pt-36 pl-44 pr-44 pb-36">
@@ -192,21 +226,25 @@ export default function FirstPage() {
               posts[6].attributes.image.data.attributes.url
             }
           />
-
+          <div className=" absolute  font-['Poppins'] pl-5 pt-5 bottom-52 text-xs">
+            <p className="rounded-md p-1 text-black bg-white">
+              {posts[5].attributes.tag}
+            </p>
+          </div>
           <div>
             <FontAwesomeIcon
               icon={faHeart}
-              className="absolute bottom-5 pl-3 text-white	"
+              className="absolute bottom-5 pl-5 text-white	"
             />
 
-            <p className="absolute bottom-2	rounded-md pl-9 pb-2 text-white">
+            <p className="absolute bottom-2	rounded-md pl-10 pb-2 text-white">
               {posts[6].attributes.likes}
             </p>
             <FontAwesomeIcon
               icon={faHeart}
-              className="absolute bottom-5 pl-20 text-white	"
+              className="absolute bottom-5 pl-24 text-white	"
             />
-            <p className="absolute bottom-2	rounded-md pl-24 pb-2 text-white">
+            <p className="absolute bottom-2	rounded-md pl-28 pb-2 text-white">
               {posts[6].attributes.views}
             </p>
           </div>
@@ -218,6 +256,23 @@ export default function FirstPage() {
           <div>
             <p className="font-['Poppins'] pt-2">
               {posts[6].attributes.excerpt}
+            </p>
+          </div>
+          <div className="pt-3 flex">
+            <Image
+              className="rounded-full"
+              width={40}
+              height={40}
+              src={
+                "http://localhost:1337" +
+                posts[6].attributes.owner.data.attributes.picture.data
+                  .attributes.url
+              }
+            />
+            <p className="font-['Poppins'] pl-5 pt-2">
+              {" "}
+              {posts[6].attributes.owner.data.attributes.name},
+              {posts[6].attributes.owner.data.attributes.jobTitle}
             </p>
           </div>
         </div>
