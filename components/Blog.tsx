@@ -165,6 +165,7 @@ export default function Blog() {
                   Array(data.blogs.meta.pagination.pageCount).keys()
                 ).map((number) => (
                   <button
+                    key={number}
                     className="h-10 px-5  transition-colors duration-150 bg-white rounded-r-lg focus:shadow-outline hover:bg-indigo-100"
                     onClick={handleOnClick}
                     value={number + 1}
