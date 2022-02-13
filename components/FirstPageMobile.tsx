@@ -102,7 +102,7 @@ export default function FirstPageMobile() {
           <img
             className="object-cover w-full h-48 rounded-md"
             src={
-              "process.env.NEXT_PUBLIC_BACKEND_URL" +
+              process.env.NEXT_PUBLIC_BACKEND_URL +
               posts[0].attributes.image.data.attributes.url
             }
           />
@@ -122,7 +122,7 @@ export default function FirstPageMobile() {
           <img
             className="object-cover w-full h-48 rounded-md"
             src={
-              "process.env.NEXT_PUBLIC_BACKEND_URL" +
+              process.env.NEXT_PUBLIC_BACKEND_URL +
               posts[1].attributes.image.data.attributes.url
             }
           />
@@ -139,7 +139,7 @@ export default function FirstPageMobile() {
           <img
             className="object-cover w-full h-48 rounded-md"
             src={
-              "process.env.NEXT_PUBLIC_BACKEND_URL" +
+              process.env.NEXT_PUBLIC_BACKEND_URL +
               posts[2].attributes.image.data.attributes.url
             }
           />
@@ -152,7 +152,7 @@ export default function FirstPageMobile() {
             width={450}
             height={350}
             src={
-              "process.env.NEXT_PUBLIC_BACKEND_URL" +
+              process.env.NEXT_PUBLIC_BACKEND_URL +
               posts[3].attributes.image.data.attributes.url
             }
           />
@@ -195,7 +195,7 @@ export default function FirstPageMobile() {
               width={40}
               height={40}
               src={
-                "process.env.NEXT_PUBLIC_BACKEND_URL" +
+                process.env.NEXT_PUBLIC_BACKEND_URL +
                 posts[3].attributes.owner.data.attributes.picture.data
                   .attributes.url
               }
@@ -214,7 +214,7 @@ export default function FirstPageMobile() {
               width={450}
               height={250}
               src={
-                "process.env.NEXT_PUBLIC_BACKEND_URL" +
+                process.env.NEXT_PUBLIC_BACKEND_URL +
                 posts[4].attributes.image.data.attributes.url
               }
             />
@@ -243,7 +243,7 @@ export default function FirstPageMobile() {
               width={450}
               height={250}
               src={
-                "process.env.NEXT_PUBLIC_BACKEND_URL" +
+                process.env.NEXT_PUBLIC_BACKEND_URL +
                 posts[5].attributes.image.data.attributes.url
               }
             />
