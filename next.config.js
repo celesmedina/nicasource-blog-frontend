@@ -4,7 +4,7 @@ const nextConfig = {
 };
 module.exports = {
   images: {
-    domains: ["localhost"],
+    domains: ["localhost", "nicasource-blog-backend-mu7zm.ondigitalocean.app"],
   },
   nextConfig,
 };
