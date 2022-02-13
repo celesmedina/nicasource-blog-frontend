@@ -6,7 +6,6 @@ import Cards from "../components/Cards";
 import FirstPage from "../components/FirstPage";
 import FirstPageMobile from "./FirstPageMobile";
 import { useMediaQuery } from "react-responsive";
-import { isMobile } from "react-device-detect";
 
 const QUERY = gql`
   query Blogs($pageSize: Int, $page: Int) {
@@ -127,12 +126,14 @@ export default function Blog() {
   }
 
   const posts = data?.blogs?.data ?? [];
+  const isTabletOrMobile = useMediaQuery({ query: "(max-width: 1224px)" });
+
   return (
     <div>
       <div>
-        {page === 1 && isMobile ? <FirstPageMobile /> : <FirstPage />}
+        {page === 1 && (isTabletOrMobile ? <FirstPageMobile /> : <FirstPage />)}
 
-        <div className="grid grid-cols-3 grid-rows-3 pr-36 pl-36 ">
+        <div className=" pl-1 pr-1 sm:grid grid-cols-3 grid-rows-3 sm:pr-36 sm:pl-36 ">
           {" "}
           {page > 1 &&
             posts.map((post: any) => (
