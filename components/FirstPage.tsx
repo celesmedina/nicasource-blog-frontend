@@ -293,7 +293,7 @@ export default function FirstPage() {
             width={450}
             height={250}
             src={
-              "process.env.NEXT_PUBLIC_BACKEND_URL" +
+              process.env.NEXT_PUBLIC_BACKEND_URL +
               posts[7].attributes.image.data.attributes.url
             }
           />
@@ -319,7 +319,7 @@ export default function FirstPage() {
             width={450}
             height={250}
             src={
-              "process.env.NEXT_PUBLIC_BACKEND_URL" +
+              process.env.NEXT_PUBLIC_BACKEND_URL +
               posts[8].attributes.image.data.attributes.url
             }
           />
