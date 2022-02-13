@@ -206,7 +206,7 @@ export default function FirstPage() {
           <img
             className="object-cover w-full h-48 rounded-md"
             src={
-              "process.env.NEXT_PUBLIC_BACKEND_URL" +
+              process.env.NEXT_PUBLIC_BACKEND_URL +
               posts[5].attributes.image.data.attributes.url
             }
           />
@@ -264,7 +264,7 @@ export default function FirstPage() {
               width={40}
               height={40}
               src={
-                "process.env.NEXT_PUBLIC_BACKEND_URL" +
+                process.env.NEXT_PUBLIC_BACKEND_URL +
                 posts[6].attributes.owner.data.attributes.picture.data
                   .attributes.url
               }
