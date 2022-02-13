@@ -16,11 +16,31 @@ const QUERY = gql`
           pageCount
         }
       }
+
       data {
         attributes {
           title
           author
           tag
+          views
+          likes
+          date
+          owner {
+            data {
+              attributes {
+                name
+                jobTitle
+                picture {
+                  data {
+                    attributes {
+                      url
+                    }
+                  }
+                }
+              }
+            }
+          }
+          excerpt
           image {
             data {
               attributes {
@@ -117,6 +137,8 @@ export default function Blog() {
                 title={post.attributes.title}
                 author={post.attributes.author}
                 tag={post.attributes.tag}
+                likes={post.attributes.likes}
+                views={post.attributes.views}
                 imageUrl={post.attributes.image.data.attributes.url}
               />
             ))}

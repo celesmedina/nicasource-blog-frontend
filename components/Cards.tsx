@@ -1,4 +1,6 @@
 import Image from "next/image";
+import { faHeart } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 export default function Cards(props: any) {
   return (
     <div className=" relative pt-11 pl-16">
@@ -15,6 +17,13 @@ export default function Cards(props: any) {
       <p className="font-['Poppins'] mt-1"> {props.author}</p>
 
       <p className="font-['Domine']  pt-9 text-4xl"> {props.title}</p>
+
+      <div className="flex pt-8">
+        <FontAwesomeIcon icon={faHeart} className="pt-1" />
+        <p className="rounded-md pb-2 text-balck pl-3">{props.likes}</p>
+        <FontAwesomeIcon icon={faHeart} className="pt-1 pl-10" />
+        <p className="rounded-md text-black pl-3">{props.views}</p>
+      </div>
       {/* <p> {props.tag}</p> */}
     </div>
   );
