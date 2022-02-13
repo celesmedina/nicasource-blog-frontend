@@ -9,7 +9,7 @@ export default function Cards(props: any) {
           className="rounded-t-lg"
           layout="fill"
           objectFit="cover"
-          src={process.env.BACKEND_URL + props.imageUrl}
+          src={process.env.NEXT_PUBLIC_BACKEND_URL + props.imageUrl}
           unoptimized
         />
       </div>
@@ -28,4 +28,4 @@ export default function Cards(props: any) {
     </div>
   );
 }
-// className={"bg-[url('process.env.BACKEND_URL" + props.imageUrl + "')]"}
+// className={"bg-[url('process.env.NEXT_PUBLIC_BACKEND_URL" + props.imageUrl + "')]"}

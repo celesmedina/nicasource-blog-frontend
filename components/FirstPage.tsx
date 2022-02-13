@@ -104,7 +104,7 @@ export default function FirstPage() {
           <img
             className="object-cover w-full h-48 rounded-md"
             src={
-              process.env.BACKEND_URL +
+              process.env.NEXT_PUBLIC_BACKEND_URL +
               posts[0].attributes.image.data.attributes.url
             }
           />
@@ -125,7 +125,7 @@ export default function FirstPage() {
           <img
             className="object-cover h-full rounded-md"
             src={
-              process.env.BACKEND_URL +
+              process.env.NEXT_PUBLIC_BACKEND_URL +
               posts[1].attributes.image.data.attributes.url
             }
           />
@@ -145,7 +145,7 @@ export default function FirstPage() {
           <img
             className="object-cover h-full rounded-md"
             src={
-              process.env.BACKEND_URL +
+              process.env.NEXT_PUBLIC_BACKEND_URL +
               posts[2].attributes.image.data.attributes.url
             }
           />
@@ -166,7 +166,7 @@ export default function FirstPage() {
           <img
             className="object-cover h-full rounded-md"
             src={
-              process.env.BACKEND_URL +
+              process.env.NEXT_PUBLIC_BACKEND_URL +
               posts[3].attributes.image.data.attributes.url
             }
           />
@@ -186,7 +186,7 @@ export default function FirstPage() {
           <img
             className="object-cover  h-full  rounded-md"
             src={
-              process.env.BACKEND_URL +
+              process.env.NEXT_PUBLIC_BACKEND_URL +
               posts[4].attributes.image.data.attributes.url
             }
           />
@@ -206,7 +206,7 @@ export default function FirstPage() {
           <img
             className="object-cover w-full h-48 rounded-md"
             src={
-              "process.env.BACKEND_URL" +
+              "process.env.NEXT_PUBLIC_BACKEND_URL" +
               posts[5].attributes.image.data.attributes.url
             }
           />
@@ -222,7 +222,7 @@ export default function FirstPage() {
             width={450}
             height={350}
             src={
-              process.env.BACKEND_URL +
+              process.env.NEXT_PUBLIC_BACKEND_URL +
               posts[6].attributes.image.data.attributes.url
             }
           />
@@ -264,7 +264,7 @@ export default function FirstPage() {
               width={40}
               height={40}
               src={
-                "process.env.BACKEND_URL" +
+                "process.env.NEXT_PUBLIC_BACKEND_URL" +
                 posts[6].attributes.owner.data.attributes.picture.data
                   .attributes.url
               }
@@ -293,7 +293,7 @@ export default function FirstPage() {
             width={450}
             height={250}
             src={
-              "process.env.BACKEND_URL" +
+              "process.env.NEXT_PUBLIC_BACKEND_URL" +
               posts[7].attributes.image.data.attributes.url
             }
           />
@@ -319,7 +319,7 @@ export default function FirstPage() {
             width={450}
             height={250}
             src={
-              "process.env.BACKEND_URL" +
+              "process.env.NEXT_PUBLIC_BACKEND_URL" +
               posts[8].attributes.image.data.attributes.url
             }
           />
@@ -344,7 +344,7 @@ export default function FirstPage() {
             width={450}
             height={250}
             src={
-              process.env.BACKEND_URL +
+              process.env.NEXT_PUBLIC_BACKEND_URL +
               posts[9].attributes.image.data.attributes.url
             }
           />
