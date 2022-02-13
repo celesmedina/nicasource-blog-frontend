@@ -4,7 +4,10 @@ import { useQuery, gql } from "@apollo/client";
 import { useState } from "react";
 import Cards from "../components/Cards";
 import FirstPage from "../components/FirstPage";
+import FirstPageMobile from "./FirstPageMobile";
 import { useMediaQuery } from "react-responsive";
+import { isMobile } from "react-device-detect";
+
 const QUERY = gql`
   query Blogs($pageSize: Int, $page: Int) {
     blogs(pagination: { pageSize: $pageSize, page: $page }) {
@@ -127,7 +130,7 @@ export default function Blog() {
   return (
     <div>
       <div>
-        {page === 1 && <FirstPage />}
+        {page === 1 && isMobile ? <FirstPageMobile /> : <FirstPage />}
 
         <div className="grid grid-cols-3 grid-rows-3 pr-36 pl-36 ">
           {" "}

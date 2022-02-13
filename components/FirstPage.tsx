@@ -91,7 +91,7 @@ export default function FirstPage() {
 
   return (
     <>
-      <div className="grid grid-cols1 grid-rows2 sm:grid-cols-4 grid-rows-2 gap-4 pt-20 pr-36 pl-36">
+      <div className="grid grid-cols-4 grid-rows-2 gap-4 pt-20 pr-36 pl-36">
         <div className="relative col-span-2">
           <div className="absolute text-white font-['Domine'] pl-5 pt-24 text-2xl">
             <p>{posts[0].attributes.title}</p>
