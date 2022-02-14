@@ -1,5 +1,6 @@
 import { useQuery, gql } from "@apollo/client";
-
+import Image from "next/image";
+import Link from "next/link";
 import { useRouter } from "next/router";
 
 const QUERY = gql`
@@ -87,10 +88,32 @@ export default function PostInternalView() {
   const post = data?.blog?.data ?? [];
 
   return (
-    <div>
-      <p>{post.attributes && post.attributes.title}</p>
-      <p>{post.attributes && post.attributes.excerpt}</p>
-      <p>{post.attributes && post.attributes.body}</p>
+    <div className="p-24">
+      <p className="font-['Domine'] text-2xl pb-5">
+        {post.attributes && post.attributes.title}
+      </p>
+      <Image
+        className="rounded-t-lg"
+        width={450}
+        height={250}
+        src={
+          process.env.NEXT_PUBLIC_BACKEND_URL +
+          post.attributes.image.data.attributes.url
+        }
+      />
+      <p className="font-['Poppins'] pt-5">
+        {post.attributes && post.attributes.excerpt}
+      </p>
+      <p className="font-['Poppins'] pt-10">
+        {post.attributes && post.attributes.body}
+      </p>
+      <div className="pt-5 ">
+        <Link href={"/"}>
+          <button className="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded">
+            Return
+          </button>
+        </Link>
+      </div>
     </div>
   );
 }
