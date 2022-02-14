@@ -251,17 +251,17 @@ export default function FirstPage() {
           <div>
             <FontAwesomeIcon
               icon={faHeart}
-              className="absolute bottom-5 pl-5 text-white	"
+              className="absolute bottom-7 pl-5 text-white	"
             />
 
-            <p className="absolute bottom-2	rounded-md pl-10 pb-2 text-white">
+            <p className="absolute bottom-2	rounded-md pl-10 pb-4 text-white">
               {posts[6].attributes.likes}
             </p>
             <FontAwesomeIcon
               icon={faUser}
-              className="absolute bottom-5 pl-24 text-white	"
+              className="absolute bottom-7 pl-24 text-white	"
             />
-            <p className="absolute bottom-2	rounded-md pl-28 pb-2 text-white">
+            <p className="absolute bottom-2	rounded-md pl-28  pb-4 text-white">
               {posts[6].attributes.views}
             </p>
           </div>
@@ -279,7 +279,7 @@ export default function FirstPage() {
             <Link href={"/blog/" + posts[6].id}>
               <Image
                 className="rounded-full"
-                width={40}
+                width={43}
                 height={40}
                 src={
                   process.env.NEXT_PUBLIC_BACKEND_URL +
@@ -323,11 +323,14 @@ export default function FirstPage() {
             {posts[7].attributes.title}
           </p>
           <div className="flex pt-8">
-            <FontAwesomeIcon icon={faHeart} className="pt-1" />
+            <FontAwesomeIcon icon={faHeart} className="pt-1 text-slate-400" />
             <p className="rounded-md pb-2 text-balck pl-3">
               {posts[7].attributes.likes}
             </p>
-            <FontAwesomeIcon icon={faUser} className="pt-1 pl-10" />
+            <FontAwesomeIcon
+              icon={faUser}
+              className="pt-1 pl-10 text-slate-400"
+            />
             <p className="rounded-md text-black pl-3">
               {posts[7].attributes.views}
             </p>
@@ -350,14 +353,13 @@ export default function FirstPage() {
             {posts[8].attributes.title}
           </p>
           <div className="flex pt-8">
-            <FontAwesomeIcon icon={faHeart} className="pt-1" />
-            <p className="rounded-md pb-2 text-balck pl-3">
-              {posts[8].attributes.likes}
-            </p>
-            <FontAwesomeIcon icon={faUser} className="pt-1 pl-10" />
-            <p className="rounded-md text-black pl-3">
-              {posts[8].attributes.views}
-            </p>
+            <FontAwesomeIcon icon={faHeart} className="pt-1 text-slate-400" />
+            <p className="rounded-md pb-2  pl-3">{posts[8].attributes.likes}</p>
+            <FontAwesomeIcon
+              icon={faUser}
+              className="pt-1 pl-10 text-slate-400"
+            />
+            <p className="rounded-md  pl-3">{posts[8].attributes.views}</p>
           </div>
         </div>
         <div className="relative flex-row pr-36">
@@ -378,11 +380,14 @@ export default function FirstPage() {
           </p>
 
           <div className="flex pt-8">
-            <FontAwesomeIcon icon={faHeart} className="pt-1" />
+            <FontAwesomeIcon icon={faHeart} className="pt-1 text-slate-400" />
             <p className="rounded-md pb-2 text-balck pl-3">
               {posts[9].attributes.likes}
             </p>
-            <FontAwesomeIcon icon={faUser} className="pt-1 pl-10" />
+            <FontAwesomeIcon
+              icon={faUser}
+              className="pt-1 pl-10 text-slate-400"
+            />
             <p className="rounded-md text-black pl-3">
               {posts[9].attributes.views}
             </p>
