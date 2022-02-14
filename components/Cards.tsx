@@ -3,7 +3,16 @@ import { faHeart, faUser } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Link from "next/link";
 
-export default function Cards(props: any) {
+type CardProps = {
+  id: number;
+  imageUrl: string;
+  author: string;
+  title: string;
+  likes: number;
+  views: number;
+  tag: string;
+};
+export default function Cards(props: CardProps) {
   return (
     <div
       className="pl-1

@@ -1,6 +1,6 @@
 import { useQuery, gql } from "@apollo/client";
-import Cards from "../components/Cards";
 import Image from "next/image";
+import FirstPageCards from "./FirstPageCards";
 import { faHeart, faUser } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Link from "next/link";
@@ -96,164 +96,12 @@ export default function FirstPage() {
   return (
     <>
       <div className="grid grid-cols-4 grid-rows-2 gap-4 pt-20 pr-36 pl-36">
-        <div className="relative col-span-2">
-          <Link href={"/blog/" + posts[0].id}>
-            <div className="absolute text-white font-['Domine'] pl-5 pt-24 text-2xl">
-              <p>{posts[0].attributes.title}</p>
-            </div>
-          </Link>
-          <div className=" absolute  font-['Poppins'] pl-5 pt-5 text-xs">
-            <p className="rounded-md p-1 text-black bg-white uppercase">
-              {posts[0].attributes.tag}
-            </p>
-          </div>
-
-          <img
-            className="object-cover w-full h-48 rounded-md"
-            src={
-              process.env.NEXT_PUBLIC_BACKEND_URL +
-              posts[0].attributes.image.data.attributes.url
-            }
-          />
-
-          <div className=" absolute  font-['Poppins'] bottom-3 pl-5 text-sm">
-            <p className="rounded-md text-white uppercase">
-              {dateFormat(posts[0].attributes.date, "mmm. dd. yyyy")}
-            </p>
-          </div>
-        </div>
-        <div className="relative row-span-2">
-          <Link href={"/blog/" + posts[1].id}>
-            <div className="absolute text-white font-['Domine'] pl-5 pt-64 text-2xl">
-              <p>{posts[1].attributes.title}</p>
-            </div>
-          </Link>
-          <div className=" absolute  font-['Poppins'] pl-5 pt-5 text-xs">
-            <p className="rounded-md p-1 text-black bg-white uppercase">
-              {" "}
-              {posts[1].attributes.tag}
-            </p>
-          </div>
-          <Link href={"/blog/" + posts[1].id}>
-            <img
-              className="object-cover h-full rounded-md"
-              src={
-                process.env.NEXT_PUBLIC_BACKEND_URL +
-                posts[1].attributes.image.data.attributes.url
-              }
-            />
-          </Link>
-          <div className=" absolute  font-['Poppins'] bottom-3 pl-5 text-sm">
-            <p className="rounded-md text-white uppercase">
-              {dateFormat(posts[1].attributes.date, "mmm. dd. yyyy")}
-            </p>
-          </div>
-        </div>
-        <div className="relative r  row-span-2">
-          <div className=" absolute  font-['Poppins'] pl-5 pt-5 text-xs">
-            <p className="rounded-md p-1 text-black bg-white uppercase">
-              {posts[2].attributes.tag}
-            </p>
-          </div>
-          <Link href={"/blog/" + posts[2].id}>
-            <div className="absolute text-white font-['Domine'] pl-5 pt-64 text-2xl">
-              <p>{posts[2].attributes.title}</p>
-            </div>
-          </Link>
-          <Link href={"/blog/" + posts[2].id}>
-            <img
-              className="object-cover h-full rounded-md"
-              src={
-                process.env.NEXT_PUBLIC_BACKEND_URL +
-                posts[2].attributes.image.data.attributes.url
-              }
-            />
-          </Link>
-          <div className=" absolute  font-['Poppins'] bottom-3 pl-5 text-sm">
-            <p className="rounded-md text-white uppercase">
-              {dateFormat(posts[2].attributes.date, "mmm. dd. yyyy")}
-            </p>
-          </div>
-        </div>
-
-        <div className="relative  row-span-2">
-          <div className=" absolute font-['Poppins'] pl-5 pt-5 text-xs">
-            <p className="rounded-md p-1 text-black bg-white uppercase">
-              {posts[3].attributes.tag}
-            </p>
-          </div>
-          <Link href={"/blog/" + posts[3].id}>
-            <div className="absolute text-white font-['Domine'] pl-5 pt-64 text-2xl">
-              <p>{posts[3].attributes.title}</p>
-            </div>
-          </Link>
-          <Link href={"/blog/" + posts[3].id}>
-            <img
-              className="object-cover h-full rounded-md"
-              src={
-                process.env.NEXT_PUBLIC_BACKEND_URL +
-                posts[3].attributes.image.data.attributes.url
-              }
-            />
-          </Link>
-          <div className=" absolute  font-['Poppins'] bottom-3 pl-5 text-sm">
-            <p className="rounded-md text-white uppercase">
-              {dateFormat(posts[3].attributes.date, "mmm. dd. yyyy")}
-            </p>
-          </div>
-        </div>
-        <div className="relative row-span-2">
-          <div className=" absolute  font-['Poppins'] pl-5 pt-5 text-xs">
-            <p className="rounded-md p-1 text-black bg-white uppercase">
-              {posts[4].attributes.tag}
-            </p>
-          </div>
-          <Link href={"/blog/" + posts[4].id}>
-            <div className="absolute text-white font-['Domine'] pl-5 pt-64 text-2xl">
-              <p>{posts[4].attributes.title}</p>
-            </div>
-          </Link>
-          <Link href={"/blog/" + posts[4].id}>
-            <img
-              className="object-cover  h-full  rounded-md"
-              src={
-                process.env.NEXT_PUBLIC_BACKEND_URL +
-                posts[4].attributes.image.data.attributes.url
-              }
-            />
-          </Link>
-          <div className=" absolute  font-['Poppins'] bottom-3 pl-5 text-sm">
-            <p className="rounded-md text-white uppercase">
-              {dateFormat(posts[4].attributes.date, "mmm. dd. yyyy")}
-            </p>
-          </div>
-        </div>
-        <div className="relative col-span-2 ">
-          <div className=" absolute  font-['Poppins'] pl-5 pt-5 text-xs">
-            <p className="rounded-md p-1 text-black bg-white uppercase">
-              {posts[5].attributes.tag}
-            </p>
-          </div>
-          <Link href={"/blog/" + posts[5].id}>
-            <div className="absolute text-white font-['Domine'] pl-5 pt-24 text-2xl">
-              <p>{posts[5].attributes.title}</p>
-            </div>
-          </Link>
-          <Link href={"/blog/" + posts[5].id}>
-            <img
-              className="object-cover w-full h-48 rounded-md"
-              src={
-                process.env.NEXT_PUBLIC_BACKEND_URL +
-                posts[5].attributes.image.data.attributes.url
-              }
-            />
-          </Link>
-          <div className=" absolute  font-['Poppins'] bottom-3 pl-5 text-sm">
-            <p className="rounded-md text-white uppercase">
-              {dateFormat(posts[5].attributes.date, "mmm. dd. yyyy")}
-            </p>
-          </div>
-        </div>
+        <FirstPageCards post={posts[0]} className="col-span-2" />
+        <FirstPageCards post={posts[1]} className="row-span-2" />
+        <FirstPageCards post={posts[2]} className="row-span-2" />
+        <FirstPageCards post={posts[3]} className="row-span-2" />
+        <FirstPageCards post={posts[4]} className="row-span-2" />
+        <FirstPageCards post={posts[5]} className="col-span-2" />
       </div>{" "}
       <div className="flex justify-center items-center pt-36 pl-44 pr-44 pb-36">
         <div className="relative">
