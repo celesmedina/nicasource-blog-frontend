@@ -88,7 +88,7 @@ export default function PostInternalView() {
   const post = data?.blog?.data ?? [];
 
   return (
-    <div className="p-24">
+    <div className="p-14">
       <p className="font-['Domine'] text-2xl pb-5">
         {post.attributes && post.attributes.title}
       </p>
