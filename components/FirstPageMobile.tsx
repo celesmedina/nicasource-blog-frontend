@@ -2,6 +2,8 @@ import { useQuery, gql } from "@apollo/client";
 import Image from "next/image";
 import { faHeart } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Link from "next/link";
+import dateFormat, { masks } from "dateformat";
 
 const QUERY = gql`
   query Blogs {
@@ -15,12 +17,14 @@ const QUERY = gql`
         }
       }
       data {
+        id
         attributes {
           title
           author
           tag
           views
           likes
+          body
           date
           owner {
             data {
@@ -92,11 +96,13 @@ export default function FirstPageMobile() {
     <div>
       <div className="grid grid-cols-2 grid-rows-2 gap-4 pt-20">
         <div className="relative col-span-2  ">
-          <div className="absolute text-white font-['Domine'] pl-5 pt-32 text-2xl">
-            <p>{posts[0].attributes.title}</p>
-          </div>
+          <Link href={"/blog/" + posts[0].id}>
+            <div className="absolute text-white font-['Domine'] pl-5 pt-32 text-2xl">
+              <p>{posts[0].attributes.title}</p>
+            </div>
+          </Link>
           <div className=" absolute  font-['Poppins'] pl-5 pt-5 text-xs">
-            <p className="rounded-md p-1 text-black bg-white">
+            <p className="rounded-md p-1 text-black bg-white uppercase">
               {posts[0].attributes.tag}
             </p>
           </div>
@@ -108,16 +114,21 @@ export default function FirstPageMobile() {
               posts[0].attributes.image.data.attributes.url
             }
           />
-          <div className=" absolute  font-['Poppins'] bottom-12 pl-5 text-sm">
-            <p className="rounded-md text-white">{posts[0].attributes.date}</p>
+          <div className=" absolute  font-['Poppins'] bottom-12 pl-5 text-sm  upppercase">
+            <p className="rounded-md text-white">
+              {" "}
+              {dateFormat(posts[0].attributes.date, "mmm. dd. yyyy")}
+            </p>
           </div>
         </div>
         <div className="relative">
-          <div className="absolute text-white font-['Domine'] pl-5 pt-32 text-xl">
-            <p>{posts[1].attributes.title}</p>
-          </div>
+          <Link href={"/blog/" + posts[1].id}>
+            <div className="absolute text-white font-['Domine'] pl-5 pt-32 text-xl">
+              <p>{posts[1].attributes.title}</p>
+            </div>
+          </Link>
           <div className=" absolute  font-['Poppins'] pl-5 pt-5 text-xs">
-            <p className="rounded-md p-1 text-black bg-white">
+            <p className="rounded-md p-1 text-black bg-white uppercase">
               {posts[1].attributes.tag}
             </p>
           </div>
@@ -130,11 +141,13 @@ export default function FirstPageMobile() {
           />
         </div>
         <div className="relative">
-          <div className="absolute text-white font-['Domine'] pl-5 pt-32 text-xl ">
-            <p>{posts[2].attributes.title}</p>
-          </div>
+          <Link href={"/blog/" + posts[2].id}>
+            <div className="absolute text-white font-['Domine'] pl-5 pt-32 text-xl ">
+              <p>{posts[2].attributes.title}</p>
+            </div>
+          </Link>
           <div className=" absolute  font-['Poppins'] pl-5 pt-5 text-xs">
-            <p className="rounded-md p-1 text-black bg-white">
+            <p className="rounded-md p-1 text-black bg-white uppercase">
               {posts[2].attributes.tag}
             </p>
           </div>
@@ -159,7 +172,7 @@ export default function FirstPageMobile() {
             }
           />
           <div className=" absolute  font-['Poppins'] pl-5 pt-5 bottom-60 text-xs">
-            <p className="rounded-md p-1 text-black bg-white">
+            <p className="rounded-md p-1 text-black bg-white uppercase">
               {posts[3].attributes.tag}
             </p>
           </div>
@@ -183,9 +196,11 @@ export default function FirstPageMobile() {
         </div>
 
         <div className="pl-5">
-          <p className="font-['Domine'] pt-5 text-5xl ">
-            {posts[3].attributes.title}
-          </p>
+          <Link href={"/blog/" + posts[3].id}>
+            <p className="font-['Domine'] pt-5 text-5xl ">
+              {posts[3].attributes.title}
+            </p>
+          </Link>
           <div>
             <p className="font-['Poppins'] pt-2 pr-4">
               {posts[3].attributes.excerpt}
@@ -225,15 +240,20 @@ export default function FirstPageMobile() {
               {" "}
               {posts[4].attributes.author}
             </p>
-            <p className="font-['Domine'] pt-7 text-2xl">
-              {posts[4].attributes.title}
-            </p>
+            <Link href={"/blog/" + posts[4].id}>
+              <p className="font-['Domine'] pt-7 text-2xl">
+                {posts[4].attributes.title}
+              </p>
+            </Link>
             <div className="flex pt-8">
-              <FontAwesomeIcon icon={faHeart} className="pt-1" />
+              <FontAwesomeIcon icon={faHeart} className="pt-1 text-slate-400" />
               <p className="rounded-md pb-2 text-balck pl-3">
                 {posts[4].attributes.likes}
               </p>
-              <FontAwesomeIcon icon={faHeart} className="pt-1 pl-10" />
+              <FontAwesomeIcon
+                icon={faHeart}
+                className="pt-1 pl-10 text-slate-400"
+              />
               <p className="rounded-md text-black pl-3">
                 {posts[4].attributes.views}
               </p>
@@ -253,15 +273,20 @@ export default function FirstPageMobile() {
               {" "}
               {posts[5].attributes.author}
             </p>
-            <p className="font-['Domine'] pt-7 text-2xl">
-              {posts[5].attributes.title}
-            </p>
+            <Link href={"/blog/" + posts[5].id}>
+              <p className="font-['Domine'] pt-7 text-2xl">
+                {posts[5].attributes.title}
+              </p>
+            </Link>
             <div className="flex pt-8">
-              <FontAwesomeIcon icon={faHeart} className="pt-1" />
+              <FontAwesomeIcon icon={faHeart} className="pt-1 text-slate-400" />
               <p className="rounded-md pb-2 text-balck pl-3">
                 {posts[5].attributes.likes}
               </p>
-              <FontAwesomeIcon icon={faHeart} className="pt-1 pl-10" />
+              <FontAwesomeIcon
+                icon={faHeart}
+                className="pt-1 pl-10 text-slate-400"
+              />
               <p className="rounded-md text-black pl-3">
                 {posts[5].attributes.views}
               </p>

@@ -6,6 +6,7 @@ import Cards from "./Cards";
 import FirstPage from "./FirstPage";
 import FirstPageMobile from "./FirstPageMobile";
 import { useMediaQuery } from "react-responsive";
+import PostInternalView from "../pages/blog/[id]";
 
 const QUERY = gql`
   query Blogs($pageSize: Int, $page: Int) {
@@ -18,14 +19,15 @@ const QUERY = gql`
           pageCount
         }
       }
-
       data {
+        id
         attributes {
           title
           author
           tag
           views
           likes
+          body
           date
           owner {
             data {
@@ -140,6 +142,7 @@ export default function Blog() {
             posts.map((post: any) => (
               <Cards
                 key={post.attributes.id}
+                id={post.id}
                 title={post.attributes.title}
                 author={post.attributes.author}
                 tag={post.attributes.tag}

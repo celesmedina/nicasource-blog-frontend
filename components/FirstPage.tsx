@@ -4,6 +4,7 @@ import Image from "next/image";
 import { faHeart, faUser } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Link from "next/link";
+import dateFormat, { masks } from "dateformat";
 
 const QUERY = gql`
   query Blogs {
@@ -96,33 +97,39 @@ export default function FirstPage() {
     <>
       <div className="grid grid-cols-4 grid-rows-2 gap-4 pt-20 pr-36 pl-36">
         <div className="relative col-span-2">
-          <div className="absolute text-white font-['Domine'] pl-5 pt-24 text-2xl">
-            <p>{posts[0].attributes.title}</p>
-          </div>
+          <Link href={"/blog/" + posts[0].id}>
+            <div className="absolute text-white font-['Domine'] pl-5 pt-24 text-2xl">
+              <p>{posts[0].attributes.title}</p>
+            </div>
+          </Link>
           <div className=" absolute  font-['Poppins'] pl-5 pt-5 text-xs">
-            <p className="rounded-md p-1 text-black bg-white">
+            <p className="rounded-md p-1 text-black bg-white uppercase">
               {posts[0].attributes.tag}
             </p>
           </div>
-          <Link href={"/blog/" + posts[0].id}>
-            <img
-              className="object-cover w-full h-48 rounded-md"
-              src={
-                process.env.NEXT_PUBLIC_BACKEND_URL +
-                posts[0].attributes.image.data.attributes.url
-              }
-            />
-          </Link>
+
+          <img
+            className="object-cover w-full h-48 rounded-md"
+            src={
+              process.env.NEXT_PUBLIC_BACKEND_URL +
+              posts[0].attributes.image.data.attributes.url
+            }
+          />
+
           <div className=" absolute  font-['Poppins'] bottom-3 pl-5 text-sm">
-            <p className="rounded-md text-white">{posts[0].attributes.date}</p>
+            <p className="rounded-md text-white uppercase">
+              {dateFormat(posts[0].attributes.date, "mmm. dd. yyyy")}
+            </p>
           </div>
         </div>
         <div className="relative row-span-2">
-          <div className="absolute text-white font-['Domine'] pl-5 pt-64 text-2xl">
-            <p>{posts[1].attributes.title}</p>
-          </div>
+          <Link href={"/blog/" + posts[1].id}>
+            <div className="absolute text-white font-['Domine'] pl-5 pt-64 text-2xl">
+              <p>{posts[1].attributes.title}</p>
+            </div>
+          </Link>
           <div className=" absolute  font-['Poppins'] pl-5 pt-5 text-xs">
-            <p className="rounded-md p-1 text-black bg-white">
+            <p className="rounded-md p-1 text-black bg-white uppercase">
               {" "}
               {posts[1].attributes.tag}
             </p>
@@ -137,18 +144,22 @@ export default function FirstPage() {
             />
           </Link>
           <div className=" absolute  font-['Poppins'] bottom-3 pl-5 text-sm">
-            <p className="rounded-md text-white">{posts[1].attributes.date}</p>
+            <p className="rounded-md text-white uppercase">
+              {dateFormat(posts[1].attributes.date, "mmm. dd. yyyy")}
+            </p>
           </div>
         </div>
         <div className="relative r  row-span-2">
           <div className=" absolute  font-['Poppins'] pl-5 pt-5 text-xs">
-            <p className="rounded-md p-1 text-black bg-white">
+            <p className="rounded-md p-1 text-black bg-white uppercase">
               {posts[2].attributes.tag}
             </p>
           </div>
-          <div className="absolute text-white font-['Domine'] pl-5 pt-64 text-2xl">
-            <p>{posts[2].attributes.title}</p>
-          </div>
+          <Link href={"/blog/" + posts[2].id}>
+            <div className="absolute text-white font-['Domine'] pl-5 pt-64 text-2xl">
+              <p>{posts[2].attributes.title}</p>
+            </div>
+          </Link>
           <Link href={"/blog/" + posts[2].id}>
             <img
               className="object-cover h-full rounded-md"
@@ -159,19 +170,23 @@ export default function FirstPage() {
             />
           </Link>
           <div className=" absolute  font-['Poppins'] bottom-3 pl-5 text-sm">
-            <p className="rounded-md text-white">{posts[2].attributes.date}</p>
+            <p className="rounded-md text-white uppercase">
+              {dateFormat(posts[2].attributes.date, "mmm. dd. yyyy")}
+            </p>
           </div>
         </div>
 
         <div className="relative  row-span-2">
           <div className=" absolute font-['Poppins'] pl-5 pt-5 text-xs">
-            <p className="rounded-md p-1 text-black bg-white">
+            <p className="rounded-md p-1 text-black bg-white uppercase">
               {posts[3].attributes.tag}
             </p>
           </div>
-          <div className="absolute text-white font-['Domine'] pl-5 pt-64 text-2xl">
-            <p>{posts[3].attributes.title}</p>
-          </div>
+          <Link href={"/blog/" + posts[3].id}>
+            <div className="absolute text-white font-['Domine'] pl-5 pt-64 text-2xl">
+              <p>{posts[3].attributes.title}</p>
+            </div>
+          </Link>
           <Link href={"/blog/" + posts[3].id}>
             <img
               className="object-cover h-full rounded-md"
@@ -182,18 +197,22 @@ export default function FirstPage() {
             />
           </Link>
           <div className=" absolute  font-['Poppins'] bottom-3 pl-5 text-sm">
-            <p className="rounded-md text-white">{posts[3].attributes.date}</p>
+            <p className="rounded-md text-white uppercase">
+              {dateFormat(posts[3].attributes.date, "mmm. dd. yyyy")}
+            </p>
           </div>
         </div>
         <div className="relative row-span-2">
           <div className=" absolute  font-['Poppins'] pl-5 pt-5 text-xs">
-            <p className="rounded-md p-1 text-black bg-white">
+            <p className="rounded-md p-1 text-black bg-white uppercase">
               {posts[4].attributes.tag}
             </p>
           </div>
-          <div className="absolute text-white font-['Domine'] pl-5 pt-64 text-2xl">
-            <p>{posts[4].attributes.title}</p>
-          </div>
+          <Link href={"/blog/" + posts[4].id}>
+            <div className="absolute text-white font-['Domine'] pl-5 pt-64 text-2xl">
+              <p>{posts[4].attributes.title}</p>
+            </div>
+          </Link>
           <Link href={"/blog/" + posts[4].id}>
             <img
               className="object-cover  h-full  rounded-md"
@@ -204,18 +223,22 @@ export default function FirstPage() {
             />
           </Link>
           <div className=" absolute  font-['Poppins'] bottom-3 pl-5 text-sm">
-            <p className="rounded-md text-white">{posts[4].attributes.date}</p>
+            <p className="rounded-md text-white uppercase">
+              {dateFormat(posts[4].attributes.date, "mmm. dd. yyyy")}
+            </p>
           </div>
         </div>
         <div className="relative col-span-2 ">
           <div className=" absolute  font-['Poppins'] pl-5 pt-5 text-xs">
-            <p className="rounded-md p-1 text-black bg-white">
+            <p className="rounded-md p-1 text-black bg-white uppercase">
               {posts[5].attributes.tag}
             </p>
           </div>
-          <div className="absolute text-white font-['Domine'] pl-5 pt-24 text-2xl">
-            <p>{posts[5].attributes.title}</p>
-          </div>
+          <Link href={"/blog/" + posts[5].id}>
+            <div className="absolute text-white font-['Domine'] pl-5 pt-24 text-2xl">
+              <p>{posts[5].attributes.title}</p>
+            </div>
+          </Link>
           <Link href={"/blog/" + posts[5].id}>
             <img
               className="object-cover w-full h-48 rounded-md"
@@ -226,7 +249,9 @@ export default function FirstPage() {
             />
           </Link>
           <div className=" absolute  font-['Poppins'] bottom-3 pl-5 text-sm">
-            <p className="rounded-md text-white">{posts[5].attributes.date}</p>
+            <p className="rounded-md text-white uppercase">
+              {dateFormat(posts[5].attributes.date, "mmm. dd. yyyy")}
+            </p>
           </div>
         </div>
       </div>{" "}
@@ -243,8 +268,8 @@ export default function FirstPage() {
               }
             />
           </Link>
-          <div className=" absolute  font-['Poppins'] pl-5 pt-5 bottom-64 text-xs">
-            <p className="rounded-md p-1 text-black bg-white">
+          <div className=" absolute  font-['Poppins'] pl-5 pt-5 top-1 uppercase text-xs">
+            <p className="rounded-md p-1 text-black bg-white uppercase">
               {posts[6].attributes.tag}
             </p>
           </div>
@@ -267,9 +292,11 @@ export default function FirstPage() {
           </div>
         </div>
         <div className="pl-5">
-          <p className="font-['Domine'] text-5xl ">
-            {posts[6].attributes.title}
-          </p>
+          <Link href={"/blog/" + posts[6].id}>
+            <p className="font-['Domine'] text-5xl ">
+              {posts[6].attributes.title}
+            </p>
+          </Link>
           <div>
             <p className="font-['Poppins'] pt-2">
               {posts[6].attributes.excerpt}
@@ -319,9 +346,11 @@ export default function FirstPage() {
             />
           </Link>
           <p className="font-['Poppins'] mt-1"> {posts[7].attributes.author}</p>
-          <p className="font-['Domine'] pt-7 text-2xl">
-            {posts[7].attributes.title}
-          </p>
+          <Link href={"/blog/" + posts[7].id}>
+            <p className="font-['Domine'] pt-7 text-2xl">
+              {posts[7].attributes.title}
+            </p>
+          </Link>
           <div className="flex pt-8">
             <FontAwesomeIcon icon={faHeart} className="pt-1 text-slate-400" />
             <p className="rounded-md pb-2 text-balck pl-3">
@@ -349,9 +378,11 @@ export default function FirstPage() {
             />
           </Link>
           <p className="font-['Poppins'] mt-1"> {posts[8].attributes.author}</p>
-          <p className="font-['Domine'] pt-7 text-2xl">
-            {posts[8].attributes.title}
-          </p>
+          <Link href={"/blog/" + posts[8].id}>
+            <p className="font-['Domine'] pt-7 text-2xl">
+              {posts[8].attributes.title}
+            </p>
+          </Link>
           <div className="flex pt-8">
             <FontAwesomeIcon icon={faHeart} className="pt-1 text-slate-400" />
             <p className="rounded-md pb-2  pl-3">{posts[8].attributes.likes}</p>
@@ -375,10 +406,11 @@ export default function FirstPage() {
             />
           </Link>
           <p className="font-['Poppins'] mt-1"> {posts[9].attributes.author}</p>
-          <p className="font-['Domine'] pt-7 text-2xl">
-            {posts[9].attributes.title}
-          </p>
-
+          <Link href={"/blog/" + posts[9].id}>
+            <p className="font-['Domine'] pt-7 text-2xl">
+              {posts[9].attributes.title}
+            </p>
+          </Link>
           <div className="flex pt-8">
             <FontAwesomeIcon icon={faHeart} className="pt-1 text-slate-400" />
             <p className="rounded-md pb-2 text-balck pl-3">
