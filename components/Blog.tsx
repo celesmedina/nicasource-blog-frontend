@@ -2,8 +2,8 @@
 
 import { useQuery, gql } from "@apollo/client";
 import { useState } from "react";
-import Cards from "../components/Cards";
-import FirstPage from "../components/FirstPage";
+import Cards from "./Cards";
+import FirstPage from "./FirstPage";
 import FirstPageMobile from "./FirstPageMobile";
 import { useMediaQuery } from "react-responsive";
 
