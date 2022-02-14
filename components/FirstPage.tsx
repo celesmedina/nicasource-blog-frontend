@@ -96,12 +96,36 @@ export default function FirstPage() {
   return (
     <>
       <div className="grid grid-cols-4 grid-rows-2 gap-4 pt-20 pr-36 pl-36">
-        <FirstPageCards post={posts[0]} className="col-span-2" />
-        <FirstPageCards post={posts[1]} className="row-span-2" />
-        <FirstPageCards post={posts[2]} className="row-span-2" />
-        <FirstPageCards post={posts[3]} className="row-span-2" />
-        <FirstPageCards post={posts[4]} className="row-span-2" />
-        <FirstPageCards post={posts[5]} className="col-span-2" />
+        <FirstPageCards
+          post={posts[0]}
+          className="col-span-2"
+          imgClass="w-full h-48"
+        />
+        <FirstPageCards
+          post={posts[1]}
+          className="row-span-2"
+          imgClass="h-full"
+        />
+        <FirstPageCards
+          post={posts[2]}
+          className="row-span-2"
+          imgClass="h-full"
+        />
+        <FirstPageCards
+          post={posts[3]}
+          className="row-span-2"
+          imgClass="h-full"
+        />
+        <FirstPageCards
+          post={posts[4]}
+          className="row-span-2"
+          imgClass="h-full"
+        />
+        <FirstPageCards
+          post={posts[5]}
+          className="col-span-2"
+          imgClass="w-full h-48"
+        />
       </div>{" "}
       <div className="flex justify-center items-center pt-36 pl-44 pr-44 pb-36">
         <div className="relative">

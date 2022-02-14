@@ -18,12 +18,13 @@ type Post = {
 type Props = {
   post: Post;
   className: string;
+  imgClass: string;
 };
-export default function FirstPageCards({ post, className }: Props) {
+export default function FirstPageCards({ post, className, imgClass }: Props) {
   return (
     <div className={"relative " + className}>
       <Link href={"/blog/" + post.id}>
-        <div className="absolute text-white font-['Domine'] pl-5 pt-24 text-2xl">
+        <div className="absolute text-white font-['Domine'] pl-5 text-2xl bottom-14">
           <p>{post.attributes.title}</p>
         </div>
       </Link>
@@ -32,15 +33,13 @@ export default function FirstPageCards({ post, className }: Props) {
           {post.attributes.tag}
         </p>
       </div>
-
       <img
-        className="object-cover w-full h-48 rounded-md"
+        className={"object-cover rounded-md " + imgClass}
         src={
           process.env.NEXT_PUBLIC_BACKEND_URL +
           post.attributes.image.data.attributes.url
         }
       />
-
       <div className=" absolute  font-['Poppins'] bottom-3 pl-5 text-sm">
         <p className="rounded-md text-white uppercase">
           {dateFormat(post.attributes.date, "mmm. dd. yyyy")}
