@@ -86,7 +86,7 @@ export default function Blog() {
     }
   }
   function handleOnClickNext(e: any) {
-    setPage(page + 1);
+    if (page < data.blogs.meta.pagination.pageCount) setPage(page + 1);
   }
 
   const { data, loading, error, fetchMore } = useQuery(QUERY, {
