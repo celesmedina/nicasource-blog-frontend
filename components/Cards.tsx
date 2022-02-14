@@ -3,7 +3,10 @@ import { faHeart, faUser } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 export default function Cards(props: any) {
   return (
-    <div className="pl-1 sm:relative sm:pt-11 sm:pl-5">
+    <div
+      className="pl-1
+    pt-10 sm:relative sm:pt-11 sm:pl-5"
+    >
       <div className="h-48 relative ">
         <Image
           className="rounded-t-lg"

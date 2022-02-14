@@ -134,7 +134,7 @@ export default function Blog() {
       <div>
         {page === 1 && (isTabletOrMobile ? <FirstPageMobile /> : <FirstPage />)}
 
-        <div className=" pl-1 pr-1 sm:grid grid-cols-3 grid-rows-3 sm:pr-36 sm:pl-36 ">
+        <div className=" pl-4 pr-4 pt-24 sm:grid grid-cols-3 grid-rows-3 sm:pr-36 sm:pl-36 ">
           {" "}
           {page > 1 &&
             posts.map((post: any) => (
