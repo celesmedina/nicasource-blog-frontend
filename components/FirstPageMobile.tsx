@@ -2,6 +2,7 @@ import { useQuery, gql } from "@apollo/client";
 import Image from "next/image";
 import { faHeart } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
 const QUERY = gql`
   query Blogs {
     blogs(pagination: { pageSize: 6, page: 1 }) {
@@ -99,6 +100,7 @@ export default function FirstPageMobile() {
               {posts[0].attributes.tag}
             </p>
           </div>
+
           <img
             className="object-cover w-full h-48 rounded-md"
             src={

@@ -1,8 +1,9 @@
 import { useQuery, gql } from "@apollo/client";
 import Cards from "../components/Cards";
 import Image from "next/image";
-import { faHeart } from "@fortawesome/free-solid-svg-icons";
+import { faHeart, faUser } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Link from "next/link";
 
 const QUERY = gql`
   query Blogs {
@@ -16,12 +17,14 @@ const QUERY = gql`
         }
       }
       data {
+        id
         attributes {
           title
           author
           tag
           views
           likes
+          body
           date
           owner {
             data {
@@ -101,13 +104,15 @@ export default function FirstPage() {
               {posts[0].attributes.tag}
             </p>
           </div>
-          <img
-            className="object-cover w-full h-48 rounded-md"
-            src={
-              process.env.NEXT_PUBLIC_BACKEND_URL +
-              posts[0].attributes.image.data.attributes.url
-            }
-          />
+          <Link href={"/blog/" + posts[0].id}>
+            <img
+              className="object-cover w-full h-48 rounded-md"
+              src={
+                process.env.NEXT_PUBLIC_BACKEND_URL +
+                posts[0].attributes.image.data.attributes.url
+              }
+            />
+          </Link>
           <div className=" absolute  font-['Poppins'] bottom-3 pl-5 text-sm">
             <p className="rounded-md text-white">{posts[0].attributes.date}</p>
           </div>
@@ -122,13 +127,15 @@ export default function FirstPage() {
               {posts[1].attributes.tag}
             </p>
           </div>
-          <img
-            className="object-cover h-full rounded-md"
-            src={
-              process.env.NEXT_PUBLIC_BACKEND_URL +
-              posts[1].attributes.image.data.attributes.url
-            }
-          />
+          <Link href={"/blog/" + posts[1].id}>
+            <img
+              className="object-cover h-full rounded-md"
+              src={
+                process.env.NEXT_PUBLIC_BACKEND_URL +
+                posts[1].attributes.image.data.attributes.url
+              }
+            />
+          </Link>
           <div className=" absolute  font-['Poppins'] bottom-3 pl-5 text-sm">
             <p className="rounded-md text-white">{posts[1].attributes.date}</p>
           </div>
@@ -142,13 +149,15 @@ export default function FirstPage() {
           <div className="absolute text-white font-['Domine'] pl-5 pt-64 text-2xl">
             <p>{posts[2].attributes.title}</p>
           </div>
-          <img
-            className="object-cover h-full rounded-md"
-            src={
-              process.env.NEXT_PUBLIC_BACKEND_URL +
-              posts[2].attributes.image.data.attributes.url
-            }
-          />
+          <Link href={"/blog/" + posts[2].id}>
+            <img
+              className="object-cover h-full rounded-md"
+              src={
+                process.env.NEXT_PUBLIC_BACKEND_URL +
+                posts[2].attributes.image.data.attributes.url
+              }
+            />
+          </Link>
           <div className=" absolute  font-['Poppins'] bottom-3 pl-5 text-sm">
             <p className="rounded-md text-white">{posts[2].attributes.date}</p>
           </div>
@@ -163,13 +172,15 @@ export default function FirstPage() {
           <div className="absolute text-white font-['Domine'] pl-5 pt-64 text-2xl">
             <p>{posts[3].attributes.title}</p>
           </div>
-          <img
-            className="object-cover h-full rounded-md"
-            src={
-              process.env.NEXT_PUBLIC_BACKEND_URL +
-              posts[3].attributes.image.data.attributes.url
-            }
-          />
+          <Link href={"/blog/" + posts[3].id}>
+            <img
+              className="object-cover h-full rounded-md"
+              src={
+                process.env.NEXT_PUBLIC_BACKEND_URL +
+                posts[3].attributes.image.data.attributes.url
+              }
+            />
+          </Link>
           <div className=" absolute  font-['Poppins'] bottom-3 pl-5 text-sm">
             <p className="rounded-md text-white">{posts[3].attributes.date}</p>
           </div>
@@ -183,13 +194,15 @@ export default function FirstPage() {
           <div className="absolute text-white font-['Domine'] pl-5 pt-64 text-2xl">
             <p>{posts[4].attributes.title}</p>
           </div>
-          <img
-            className="object-cover  h-full  rounded-md"
-            src={
-              process.env.NEXT_PUBLIC_BACKEND_URL +
-              posts[4].attributes.image.data.attributes.url
-            }
-          />
+          <Link href={"/blog/" + posts[4].id}>
+            <img
+              className="object-cover  h-full  rounded-md"
+              src={
+                process.env.NEXT_PUBLIC_BACKEND_URL +
+                posts[4].attributes.image.data.attributes.url
+              }
+            />
+          </Link>
           <div className=" absolute  font-['Poppins'] bottom-3 pl-5 text-sm">
             <p className="rounded-md text-white">{posts[4].attributes.date}</p>
           </div>
@@ -203,13 +216,15 @@ export default function FirstPage() {
           <div className="absolute text-white font-['Domine'] pl-5 pt-24 text-2xl">
             <p>{posts[5].attributes.title}</p>
           </div>
-          <img
-            className="object-cover w-full h-48 rounded-md"
-            src={
-              process.env.NEXT_PUBLIC_BACKEND_URL +
-              posts[5].attributes.image.data.attributes.url
-            }
-          />
+          <Link href={"/blog/" + posts[5].id}>
+            <img
+              className="object-cover w-full h-48 rounded-md"
+              src={
+                process.env.NEXT_PUBLIC_BACKEND_URL +
+                posts[5].attributes.image.data.attributes.url
+              }
+            />
+          </Link>
           <div className=" absolute  font-['Poppins'] bottom-3 pl-5 text-sm">
             <p className="rounded-md text-white">{posts[5].attributes.date}</p>
           </div>
@@ -217,18 +232,20 @@ export default function FirstPage() {
       </div>{" "}
       <div className="flex justify-center items-center pt-36 pl-44 pr-44 pb-36">
         <div className="relative">
-          <Image
-            className="pr-20 "
-            width={450}
-            height={350}
-            src={
-              process.env.NEXT_PUBLIC_BACKEND_URL +
-              posts[6].attributes.image.data.attributes.url
-            }
-          />
-          <div className=" absolute  font-['Poppins'] pl-5 pt-5 bottom-52 text-xs">
+          <Link href={"/blog/" + posts[6].id}>
+            <Image
+              className="pr-20 "
+              width={450}
+              height={350}
+              src={
+                process.env.NEXT_PUBLIC_BACKEND_URL +
+                posts[6].attributes.image.data.attributes.url
+              }
+            />
+          </Link>
+          <div className=" absolute  font-['Poppins'] pl-5 pt-5 bottom-64 text-xs">
             <p className="rounded-md p-1 text-black bg-white">
-              {posts[5].attributes.tag}
+              {posts[6].attributes.tag}
             </p>
           </div>
           <div>
@@ -241,7 +258,7 @@ export default function FirstPage() {
               {posts[6].attributes.likes}
             </p>
             <FontAwesomeIcon
-              icon={faHeart}
+              icon={faUser}
               className="absolute bottom-5 pl-24 text-white	"
             />
             <p className="absolute bottom-2	rounded-md pl-28 pb-2 text-white">
@@ -259,16 +276,18 @@ export default function FirstPage() {
             </p>
           </div>
           <div className="pt-3 flex">
-            <Image
-              className="rounded-full"
-              width={40}
-              height={40}
-              src={
-                process.env.NEXT_PUBLIC_BACKEND_URL +
-                posts[6].attributes.owner.data.attributes.picture.data
-                  .attributes.url
-              }
-            />
+            <Link href={"/blog/" + posts[6].id}>
+              <Image
+                className="rounded-full"
+                width={40}
+                height={40}
+                src={
+                  process.env.NEXT_PUBLIC_BACKEND_URL +
+                  posts[6].attributes.owner.data.attributes.picture.data
+                    .attributes.url
+                }
+              />
+            </Link>
             <p className="font-['Poppins'] pl-5 pt-2">
               {" "}
               {posts[6].attributes.owner.data.attributes.name},
@@ -288,16 +307,17 @@ export default function FirstPage() {
       ))} */}
       <div className="flex">
         <div className=" flex-row pl-36">
-          <Image
-            className="rounded-t-lg relative"
-            width={450}
-            height={250}
-            src={
-              process.env.NEXT_PUBLIC_BACKEND_URL +
-              posts[7].attributes.image.data.attributes.url
-            }
-          />
-
+          <Link href={"/blog/" + posts[7].id}>
+            <Image
+              className="rounded-t-lg relative"
+              width={450}
+              height={250}
+              src={
+                process.env.NEXT_PUBLIC_BACKEND_URL +
+                posts[7].attributes.image.data.attributes.url
+              }
+            />
+          </Link>
           <p className="font-['Poppins'] mt-1"> {posts[7].attributes.author}</p>
           <p className="font-['Domine'] pt-7 text-2xl">
             {posts[7].attributes.title}
@@ -307,22 +327,24 @@ export default function FirstPage() {
             <p className="rounded-md pb-2 text-balck pl-3">
               {posts[7].attributes.likes}
             </p>
-            <FontAwesomeIcon icon={faHeart} className="pt-1 pl-10" />
+            <FontAwesomeIcon icon={faUser} className="pt-1 pl-10" />
             <p className="rounded-md text-black pl-3">
               {posts[7].attributes.views}
             </p>
           </div>
         </div>
         <div className="relative flex-row pl-10 pr-10">
-          <Image
-            className="rounded-t-lg"
-            width={450}
-            height={250}
-            src={
-              process.env.NEXT_PUBLIC_BACKEND_URL +
-              posts[8].attributes.image.data.attributes.url
-            }
-          />
+          <Link href={"/blog/" + posts[8].id}>
+            <Image
+              className="rounded-t-lg"
+              width={450}
+              height={250}
+              src={
+                process.env.NEXT_PUBLIC_BACKEND_URL +
+                posts[8].attributes.image.data.attributes.url
+              }
+            />
+          </Link>
           <p className="font-['Poppins'] mt-1"> {posts[8].attributes.author}</p>
           <p className="font-['Domine'] pt-7 text-2xl">
             {posts[8].attributes.title}
@@ -332,22 +354,24 @@ export default function FirstPage() {
             <p className="rounded-md pb-2 text-balck pl-3">
               {posts[8].attributes.likes}
             </p>
-            <FontAwesomeIcon icon={faHeart} className="pt-1 pl-10" />
+            <FontAwesomeIcon icon={faUser} className="pt-1 pl-10" />
             <p className="rounded-md text-black pl-3">
               {posts[8].attributes.views}
             </p>
           </div>
         </div>
         <div className="relative flex-row pr-36">
-          <Image
-            className="rounded-t-lg"
-            width={450}
-            height={250}
-            src={
-              process.env.NEXT_PUBLIC_BACKEND_URL +
-              posts[9].attributes.image.data.attributes.url
-            }
-          />
+          <Link href={"/blog/" + posts[9].id}>
+            <Image
+              className="rounded-t-lg"
+              width={450}
+              height={250}
+              src={
+                process.env.NEXT_PUBLIC_BACKEND_URL +
+                posts[9].attributes.image.data.attributes.url
+              }
+            />
+          </Link>
           <p className="font-['Poppins'] mt-1"> {posts[9].attributes.author}</p>
           <p className="font-['Domine'] pt-7 text-2xl">
             {posts[9].attributes.title}
@@ -358,7 +382,7 @@ export default function FirstPage() {
             <p className="rounded-md pb-2 text-balck pl-3">
               {posts[9].attributes.likes}
             </p>
-            <FontAwesomeIcon icon={faHeart} className="pt-1 pl-10" />
+            <FontAwesomeIcon icon={faUser} className="pt-1 pl-10" />
             <p className="rounded-md text-black pl-3">
               {posts[9].attributes.views}
             </p>
