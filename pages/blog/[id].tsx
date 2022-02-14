@@ -97,8 +97,9 @@ export default function PostInternalView() {
         width={450}
         height={250}
         src={
+          post.attributes &&
           process.env.NEXT_PUBLIC_BACKEND_URL +
-          post.attributes.image.data.attributes.url
+            post.attributes.image.data.attributes.url
         }
       />
       <p className="font-['Poppins'] pt-5">
