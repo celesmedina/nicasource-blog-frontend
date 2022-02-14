@@ -171,7 +171,7 @@ export default function FirstPageMobile() {
               posts[3].attributes.image.data.attributes.url
             }
           />
-          <div className=" absolute  font-['Poppins'] pl-5 pt-5 bottom-60 text-xs">
+          <div className=" absolute  font-['Poppins'] pl-5 pt-5 top-2 text-xs">
             <p className="rounded-md p-1 text-black bg-white uppercase">
               {posts[3].attributes.tag}
             </p>

@@ -6,7 +6,6 @@ import Cards from "./Cards";
 import FirstPage from "./FirstPage";
 import FirstPageMobile from "./FirstPageMobile";
 import { useMediaQuery } from "react-responsive";
-import PostInternalView from "../pages/blog/[id]";
 
 const QUERY = gql`
   query Blogs($pageSize: Int, $page: Int) {
@@ -63,11 +62,7 @@ type Post = {
   author: string;
   tag: string;
 };
-type BlogData = {
-  blogs: {
-    data: Post;
-  };
-};
+
 
 export default function Blog() {
   let [page, setPage] = useState(1);
