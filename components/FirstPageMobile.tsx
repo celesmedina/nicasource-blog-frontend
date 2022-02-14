@@ -90,9 +90,9 @@ export default function FirstPageMobile() {
 
   return (
     <div>
-      <div className="grid grid-cols-2 grid-rows-3 gap-4 pt-20">
-        <div className="relative col-span-2">
-          <div className="absolute text-white font-['Domine'] pl-5 pt-24 text-2xl">
+      <div className="grid grid-cols-2 grid-rows-2 gap-4 pt-20">
+        <div className="relative col-span-2  ">
+          <div className="absolute text-white font-['Domine'] pl-5 pt-32 text-2xl">
             <p>{posts[0].attributes.title}</p>
           </div>
           <div className=" absolute  font-['Poppins'] pl-5 pt-5 text-xs">
@@ -102,18 +102,18 @@ export default function FirstPageMobile() {
           </div>
 
           <img
-            className="object-cover w-full h-48 rounded-md"
+            className="object-cover w-full h-64  rounded-md"
             src={
               process.env.NEXT_PUBLIC_BACKEND_URL +
               posts[0].attributes.image.data.attributes.url
             }
           />
-          <div className=" absolute  font-['Poppins'] bottom-3 pl-5 text-sm">
+          <div className=" absolute  font-['Poppins'] bottom-12 pl-5 text-sm">
             <p className="rounded-md text-white">{posts[0].attributes.date}</p>
           </div>
         </div>
-        <div className="relative row-span-2">
-          <div className="absolute text-white font-['Domine'] pl-5 pt-24 text-2xl">
+        <div className="relative">
+          <div className="absolute text-white font-['Domine'] pl-5 pt-32 text-xl">
             <p>{posts[1].attributes.title}</p>
           </div>
           <div className=" absolute  font-['Poppins'] pl-5 pt-5 text-xs">
@@ -122,15 +122,15 @@ export default function FirstPageMobile() {
             </p>
           </div>
           <img
-            className="object-cover w-full h-48 rounded-md"
+            className="object-cover w-full h-72 rounded-md"
             src={
               process.env.NEXT_PUBLIC_BACKEND_URL +
               posts[1].attributes.image.data.attributes.url
             }
           />
         </div>
-        <div className="relative row-span-2">
-          <div className="absolute text-white font-['Domine'] pl-5 pt-24 text-2xl">
+        <div className="relative">
+          <div className="absolute text-white font-['Domine'] pl-5 pt-32 text-xl ">
             <p>{posts[2].attributes.title}</p>
           </div>
           <div className=" absolute  font-['Poppins'] pl-5 pt-5 text-xs">
@@ -139,7 +139,7 @@ export default function FirstPageMobile() {
             </p>
           </div>
           <img
-            className="object-cover w-full h-48 rounded-md"
+            className="object-cover w-full h-72 rounded-md"
             src={
               process.env.NEXT_PUBLIC_BACKEND_URL +
               posts[2].attributes.image.data.attributes.url
@@ -147,7 +147,7 @@ export default function FirstPageMobile() {
           />
         </div>
       </div>
-      <div>
+      <div className="pt-14">
         <div className="relative pl-5 pr-5">
           <Image
             className=""
@@ -158,7 +158,7 @@ export default function FirstPageMobile() {
               posts[3].attributes.image.data.attributes.url
             }
           />
-          <div className=" absolute  font-['Poppins'] pl-5 pt-5 bottom-52 text-xs">
+          <div className=" absolute  font-['Poppins'] pl-5 pt-5 bottom-60 text-xs">
             <p className="rounded-md p-1 text-black bg-white">
               {posts[3].attributes.tag}
             </p>
@@ -183,18 +183,18 @@ export default function FirstPageMobile() {
         </div>
 
         <div className="pl-5">
-          <p className="font-['Domine'] text-5xl ">
+          <p className="font-['Domine'] pt-5 text-5xl ">
             {posts[3].attributes.title}
           </p>
           <div>
-            <p className="font-['Poppins'] pt-2">
+            <p className="font-['Poppins'] pt-2 pr-4">
               {posts[3].attributes.excerpt}
             </p>
           </div>
           <div className="pt-3 flex-col">
             <Image
               className="rounded-full"
-              width={40}
+              width={43}
               height={40}
               src={
                 process.env.NEXT_PUBLIC_BACKEND_URL +
