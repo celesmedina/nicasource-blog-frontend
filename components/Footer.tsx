@@ -23,30 +23,21 @@ export default function Footer() {
 
           <p>
             <Link href="#">
-              <a
-                href="/"
-                className="block  font-['Poppins'] pt-6 text-white lg:inline-block lg:mt-0 text-black hover:text-white mr-4"
-              >
+              <a className="block  font-['Poppins'] pt-6 text-white lg:inline-block lg:mt-0 text-black hover:text-white mr-4">
                 Coaching
               </a>
             </Link>
           </p>
           <p>
             <Link href="#">
-              <a
-                href="/"
-                className="block  font-['Poppins'] pt-6 text-white lg:inline-block lg:mt-0 text-black hover:text-white mr-4"
-              >
+              <a className="block  font-['Poppins'] pt-6 text-white lg:inline-block lg:mt-0 text-black hover:text-white mr-4">
                 Community
               </a>
             </Link>
           </p>
           <p>
             <Link href="#">
-              <a
-                href="/"
-                className="block  font-['Poppins'] pt-6 text-white lg:inline-block lg:mt-0 text-black hover:text-white mr-4"
-              >
+              <a className="block  font-['Poppins'] pt-6 text-white lg:inline-block lg:mt-0 text-black hover:text-white mr-4">
                 Workshops
               </a>
             </Link>
@@ -56,20 +47,14 @@ export default function Footer() {
           <p className=" text-white font-bold ">EXPLORE</p>
           <p>
             <Link href="#">
-              <a
-                href="/"
-                className="block font-['Poppins'] pt-5 text-white lg:inline-block lg:mt-0 text-black hover:text-white mr-4"
-              >
+              <a className="block font-['Poppins'] pt-5 text-white lg:inline-block lg:mt-0 text-black hover:text-white mr-4">
                 Join our Team
               </a>
             </Link>
           </p>
           <p>
             <Link href="#">
-              <a
-                href="/"
-                className="block font-['Poppins'] pt-5 text-white lg:inline-block lg:mt-0 text-black hover:text-white mr-4"
-              >
+              <a className="block font-['Poppins'] pt-5 text-white lg:inline-block lg:mt-0 text-black hover:text-white mr-4">
                 Get Certified
               </a>
             </Link>
@@ -80,40 +65,28 @@ export default function Footer() {
           <p className=" text-white font-bold">PARTNERS</p>
           <p>
             <Link href="#">
-              <a
-                href="/"
-                className="block font-['Poppins'] pt-5 text-white lg:inline-block lg:mt-0 text-black hover:text-white mr-4"
-              >
+              <a className="block font-['Poppins'] pt-5 text-white lg:inline-block lg:mt-0 text-black hover:text-white mr-4">
                 Lorem
               </a>
             </Link>
           </p>
           <p>
             <Link href="#">
-              <a
-                href="/"
-                className="block font-['Poppins'] pt-6 text-white lg:inline-block lg:mt-0 text-black hover:text-white mr-4"
-              >
+              <a className="block font-['Poppins'] pt-6 text-white lg:inline-block lg:mt-0 text-black hover:text-white mr-4">
                 Lorem
               </a>
             </Link>
           </p>
           <p>
             <Link href="#">
-              <a
-                href="/"
-                className="block font-['Poppins'] pt-6 text-white lg:inline-block lg:mt-0 text-black hover:text-white mr-4"
-              >
+              <a className="block font-['Poppins'] pt-6 text-white lg:inline-block lg:mt-0 text-black hover:text-white mr-4">
                 Lorem
               </a>
             </Link>
           </p>
           <p>
             <Link href="#">
-              <a
-                href="/"
-                className="block font-['Poppins'] pt-6 text-white lg:inline-block lg:mt-0 text-black hover:text-white mr-4"
-              >
+              <a className="block font-['Poppins'] pt-6 text-white lg:inline-block lg:mt-0 text-black hover:text-white mr-4">
                 Lorem
               </a>
             </Link>
