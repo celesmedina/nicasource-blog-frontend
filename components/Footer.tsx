@@ -5,7 +5,7 @@ export default function Footer() {
     <footer className="pt-10 bg-slate-600 py-14 px-36 ">
       <div className="grid grid-cols-1 pb-12 sm:grid-cols-6  ">
         <div className="text-white font-['Domine']   text-2xl sm:col-span-3">
-          No matter what stage you're in, we can support you.
+          No matter what stage you&apos;re in, we can support you.
           <p className="font-['Poppins'] text-sm pt-5">
             Questions on how we can?
           </p>
