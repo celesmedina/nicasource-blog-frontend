@@ -1,10 +1,19 @@
-Welcome to my Nicasource Blog Assessment
+# 🚀 Welcome to my Nicasource Blog Assessment
 
-This are the instructions to run the project on your computer.
+These are the instructions to run the project on your computer.
 
 ## Getting started
 Make sure to have already setup the app's backend.
 You can look for more information <a href="https://github.com/celesmedina/nicasource-blog-backend"> here </a>
+
+## Setup environment variables
+Open the project in your favorite code editor.
+Look for the .env file and write the following information:
+
+```bash
+NEXT_PUBLIC_BACKEND_URL= put here the backend's url
+```
+
 
 ## Install dependencies
 
