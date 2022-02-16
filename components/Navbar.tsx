@@ -6,7 +6,7 @@ export default function Navbar() {
     <div>
       <nav className="flex items-center justify-between flex-wrap bg-white px-8 sm:px-36 py-5">
         <div className="w-full block flex-grow flex items-center justify-between w-auto">
-          <img src="logo.svg" className="w-1/5" />
+          <img src="logo.svg" className=" w-1/4 sm:w-1/6" />
           <div className="block lg:hidden">
             <button
               className="flex items-center px-3 py-2 rounded  "
@@ -31,39 +31,39 @@ export default function Navbar() {
           <div className="text-sm hidden sm:block">
             <a
               href="#responsive-header"
-              className="block mt-4 font-['Poppins'] lg:inline-block lg:mt-0 text-black hover:text-white mr-4"
+              className="block mt-4 font-['Poppins'] lg:inline-block lg:mt-0 text-black hover:text-rose-700 mr-4"
             >
               Courses
             </a>
             <a
               href="#responsive-header"
-              className="block mt-4 ml-20 font-['Poppins'] lg:inline-block lg:mt-0  text-black hover:text-white mr-4"
+              className="block mt-4 ml-20 font-['Poppins'] lg:inline-block lg:mt-0  text-black hover:text-rose-700 mr-4"
             >
               Coaching
             </a>
             <a
               href="#responsive-header"
-              className="block mt-4 4 ml-20  font-['Poppins'] lg:inline-block lg:mt-0  text-black hover:text-white"
+              className="block mt-4 4 ml-20  font-['Poppins'] lg:inline-block lg:mt-0  text-black hover:text-rose-700"
             >
               Community
             </a>
 
             <a
               href="#responsive-header"
-              className="block mt-4 4 ml-20  font-['Poppins'] lg:inline-block lg:mt-0  text-black hover:text-white"
+              className="block mt-4 4 ml-20  font-['Poppins'] lg:inline-block lg:mt-0  text-black hover:text-rose-700"
             >
               Workshops
             </a>
             <a
               href="#responsive-header"
-              className="block mt-4 4 ml-20  font-['Poppins'] lg:inline-block lg:mt-0  text-slate-400	 hover:text-white"
+              className="block mt-4 4 ml-20  font-['Poppins'] lg:inline-block lg:mt-0  text-slate-400	 hover:text-rose-700"
             >
               Login
             </a>
 
             <a
               href="#"
-              className="hidden sm:inline-block  ml-20 text-sm px-4 py-2 leading-none border rounded text-slate-400	 border-slate-400 hover:border-transparent hover:text-teal-500 hover:bg-white mt-4 lg:mt-0"
+              className="hidden sm:inline-block  ml-20 text-sm px-7 py-3 leading-none border rounded text-slate-400	 border-slate-400 hover:border-transparent hover:text-rose-700 hover:border-rose-700  mt-4 lg:mt-0"
             >
               Join for Free
             </a>

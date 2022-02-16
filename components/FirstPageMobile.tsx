@@ -1,6 +1,6 @@
 import { useQuery, gql } from "@apollo/client";
 import Image from "next/image";
-import { faHeart } from "@fortawesome/free-solid-svg-icons";
+import { faHeart, faUser } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Link from "next/link";
 import dateFormat, { masks } from "dateformat";
@@ -186,7 +186,7 @@ export default function FirstPageMobile() {
               {posts[3].attributes.likes}
             </p>
             <FontAwesomeIcon
-              icon={faHeart}
+              icon={faUser}
               className="absolute bottom-5 pl-24 text-white	"
             />
             <p className="absolute bottom-2	rounded-md pl-28 pb-2 text-white">
@@ -251,7 +251,7 @@ export default function FirstPageMobile() {
                 {posts[4].attributes.likes}
               </p>
               <FontAwesomeIcon
-                icon={faHeart}
+                icon={faUser}
                 className="pt-1 pl-10 text-slate-400"
               />
               <p className="rounded-md text-black pl-3">
@@ -284,7 +284,7 @@ export default function FirstPageMobile() {
                 {posts[5].attributes.likes}
               </p>
               <FontAwesomeIcon
-                icon={faHeart}
+                icon={faUser}
                 className="pt-1 pl-10 text-slate-400"
               />
               <p className="rounded-md text-black pl-3">

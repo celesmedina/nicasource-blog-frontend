@@ -63,7 +63,6 @@ type Post = {
   tag: string;
 };
 
-
 export default function Blog() {
   let [page, setPage] = useState(1);
 
@@ -149,7 +148,7 @@ export default function Blog() {
         </div>
 
         {/* Pagination */}
-        <div className="text-center pt-20	">
+        <div className="text-center pt-20	 pb-14">
           <nav>
             <ul className="inline-flex	">
               <li>
