@@ -16,7 +16,8 @@ NEXT_PUBLIC_BACKEND_URL= put here the backend's url
 Example
 
 ```bash
-NEXT_PUBLIC_BACKEND_URL=http://localhost:1337```
+NEXT_PUBLIC_BACKEND_URL=http://localhost:1337
+```
 
 ## Install dependencies
 
