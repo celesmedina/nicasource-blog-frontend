@@ -76,32 +76,32 @@ export default function Navbar() {
           <div className="text-sm lg:flex-grow">
             <a
               href="#responsive-header"
-              className="block mt-4 font-['Poppins'] lg:inline-block lg:mt-0 text-black hover:text-white mr-4"
+              className="block mt-4 font-['Poppins'] lg:inline-block lg:mt-0 text-black hover:text-rose-700 mr-4"
             >
               Courses
             </a>
             <a
               href="#responsive-header"
-              className="block mt-4  font-['Poppins'] lg:inline-block lg:mt-0  text-black hover:text-white mr-4"
+              className="block mt-4  font-['Poppins'] lg:inline-block lg:mt-0  text-black hover:text-rose-700 mr-4"
             >
               Coaching
             </a>
             <a
               href="#responsive-header"
-              className="block mt-4 4  font-['Poppins'] lg:inline-block lg:mt-0  text-black hover:text-white"
+              className="block mt-4 4  font-['Poppins'] lg:inline-block lg:mt-0  text-black hover:text-rose-700"
             >
               Community
             </a>
 
             <a
               href="#responsive-header"
-              className="block mt-4 4   font-['Poppins'] lg:inline-block lg:mt-0  text-black hover:text-white"
+              className="block mt-4 4   font-['Poppins'] lg:inline-block lg:mt-0  text-black hover:text-rose-700"
             >
               Workshops
             </a>
             <a
               href="#responsive-header"
-              className="block mt-4 4 font-['Poppins'] lg:inline-block lg:mt-0  text-slate-400	 hover:text-white"
+              className="block mt-4 4 font-['Poppins'] lg:inline-block lg:mt-0  text-slate-400	 hover:text-rose-700"
             >
               Login
             </a>
